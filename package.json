@@ -1,0 +1,31 @@
+{
+  "name": "twitter2rss",
+  "version": "1.0.0",
+  "description": "Get user feeds as RSS.",
+  "main": "dist/index.js",
+  "scripts": {
+    "sls": "sls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dschep/twitter2rss.git"
+  },
+  "keywords": [
+    "twitter",
+    "rss"
+  ],
+  "author": "Daniel Schep <dschep@gmail.com> (http://schep.me/)",
+  "license": "GPLv3",
+  "bugs": {
+    "url": "https://github.com/dschep/twitter2rss/issues"
+  },
+  "homepage": "https://github.com/dschep/twitter2rss#readme",
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "rss": "^1.2.1",
+    "twitter": "^1.6.0"
+  },
+  "devDependencies": {
+    "serverless": "^1.3.0"
+  }
+}

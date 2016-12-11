@@ -1,0 +1,14 @@
+service: twitter2rss
+provider:
+  name: aws
+  runtime: nodejs4.3
+  stage: v1
+  region: us-east-1
+  environment: ${file(secrets.json)}
+functions:
+  twitter2rss:
+    handler: handler.twitter2rss
+    events:
+      - http:
+          path: '{screenName}'
+          method: get
