@@ -22,7 +22,6 @@ module.exports.twitterToRss = (screenName) => {
     if (error) {
       feed.item({title: 'Error fetching statuses/user_timeline'})
     } else {
-      console.log(tweets[4])
       tweets.forEach((tweet) => feed.item({
         title: tweet.text,
         description: tweet.text,
