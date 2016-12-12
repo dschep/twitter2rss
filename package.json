@@ -2,7 +2,7 @@
   "name": "twitter2rss",
   "version": "1.0.0",
   "description": "Get user feeds as RSS.",
-  "main": "dist/index.js",
+  "main": "twitter2rss.js",
   "scripts": {
     "sls": "sls"
   },

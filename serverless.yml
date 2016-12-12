@@ -7,7 +7,7 @@ provider:
   environment: ${file(secrets.json)}
 functions:
   twitter2rss:
-    handler: handler.twitter2rss
+    handler: twitter2rss.handler
     events:
       - http:
           path: '{screenName}'

@@ -3,7 +3,7 @@ const RSS = require('rss');
 const Promise = require('bluebird');
 
 
-module.exports.twitterToRss = (screenName) => {
+var twitterToRss = module.exports.twitterToRss = (screenName) => {
   const client = Promise.promisifyAll(new Twitter({
     consumer_key: process.env.CONSUMER_KEY,
     consumer_secret: process.env.CONSUMER_SECRET,
@@ -30,4 +30,16 @@ module.exports.twitterToRss = (screenName) => {
     }
     return feed;
   });
+};
+
+module.exports.handler = (event, context, callback) => {
+  twitterToRss(event.pathParameters.screenName).then((feed) => {
+    const response = {
+      statusCode: 200,
+      body: feed.xml(),
+      headers: {'Content-Type': 'application/rss+xml'},
+    };
+
+  callback(null, response);
+  })
 };
