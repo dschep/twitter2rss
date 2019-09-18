@@ -1,10 +1,16 @@
 service: twitter2rss
+app: twitter2rss
+org: personal
 provider:
   name: aws
-  runtime: nodejs4.3
+  runtime: nodejs8.10
   stage: v1
   region: us-east-1
-  environment: ${file(secrets.json)}
+  environment:
+    CONSUMER_KEY: ${secrets:CONSUMER_KEY},
+    CONSUMER_SECRET: ${secrets:CONSUMER_SECRET},
+    ACCESS_TOKEN_KEY: ${secrets:ACCESS_TOKEN_KEY},
+    ACCESS_TOKEN_SECRET: ${secrets:ACCESS_TOKEN_SECRET}
 functions:
   twitter2rss:
     handler: twitter2rss.handler
